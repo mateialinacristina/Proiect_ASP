@@ -1,0 +1,23 @@
+
+<div class="login-card">
+
+    <p class="title"> Login </p>
+
+    <form action="" [formGroup]="authForm" (ngSubmit)="onLogin()" autocomplete="off">
+       <div class="col-12 login-input"> 
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="username" placeholder="Email">
+        </div>
+        
+        <div class="col-12 form-group">
+            <label for="name">Password</label>
+            <input type="password" id="name" class="form-control" formControlName="password" placeholder="Password" (keydown.enter)="onLogin()">
+        </div>
+    </div>
+    </form>
+
+    
+    <button class="btn btn-primary login-button" type="submit" [disabled]="!authForm.valid" (click)="onLogin()">Login</button>
+</div>
+

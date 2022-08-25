@@ -1,0 +1,16 @@
+.login-input{
+    display: flex;
+    flex-direction: column;
+}
+.login-button, .title{
+    margin-left: 15px;
+}
+.title{
+    font-size: 25px;
+}
+.login-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
