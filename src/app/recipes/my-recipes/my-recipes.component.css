@@ -1,0 +1,8 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-12-2048x1267.jpg');
+    background-size: cover;
+  }
