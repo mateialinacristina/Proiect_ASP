@@ -1,0 +1,10 @@
+.recipe-detail-container {
+    margin-top: -20px;
+    height: calc(100% - 52px);
+    width: 100%;
+    padding: 10px;
+}
+
+.recipe-detail-card {
+    height: 100%;
+}

@@ -1,28 +1,23 @@
-<div class="row">
-    <div class="col-xs-12">
-        <button class="btn btn-success">New Recipe</button>
+<div class="recipe-list-container">
+    <div class="card-container" *ngFor="let recipe of recipes">
+        <mat-card class="recipe-card">
+            <mat-card-header class="recipe-card-header">
+                <mat-card-title class="recipe-title">{{ recipe.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="recipe-image-container">
+                    <img 
+                    [src]="recipe.imagePath" 
+                    alt="{{ recipe.name }}" 
+                    class="img-responsive" >
+                </div>
+                <p class="recipe-description" [matTooltip]="recipe.description"> {{ recipe.description }} </p>
+            </mat-card-content>
+            <mat-card-actions class="recipe-card-actions">
+                <button mat-raised-button color="primary" class="details-button" (click)="viewRecipe(recipe.id)">Details</button>
+                <button mat-icon-button class="save-button" (click)="saveRecipe(recipe.id)" matTooltip="Save Recipe"><mat-icon>turned_in_not</mat-icon></button>
+                <button mat-icon-button class="like-button" (click)="likeRecipe(recipe.id)" matTooltip="Like Recipe"><mat-icon>thumb_up</mat-icon></button>
+            </mat-card-actions>
+            </mat-card>
     </div>
 </div>
-<hr>
-<div class="row">
-    <div class="col-xs-12">
-        <a 
-        href="#" 
-        class="list-group-item clearfix" 
-        *ngFor="let recipe of recipes">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-                <p class="list-group-item text">{{ recipe.description }} </p>
-            </div>
-            <span class="pull-right">
-                <img 
-                [src]="recipe.imagePath" 
-                alt="{{ recipe.name }}" 
-                class="img-responsive" 
-                style="max-height: 50px;">
-            </span>
-        </a>
-        <app-recipes-item></app-recipes-item>
-    </div>
-</div>
-

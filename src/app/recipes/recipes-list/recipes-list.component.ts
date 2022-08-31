@@ -1,4 +1,6 @@
+import { RecipesService } from './../../services/recipes.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe } from '../recipes.model';
 
 @Component({
@@ -7,14 +9,19 @@ import { Recipe } from '../recipes.model';
   styleUrls: ['./recipes-list.component.css']
 })
 export class RecipesListComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is simply a test', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg' ),
-    new Recipe('A Test Recipe', 'This is simply a test', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg' )
-  ];
+  recipes: Recipe[] = [];
 
-  constructor() { }
+  constructor(private router: Router, private recipesService: RecipesService) { }
 
   ngOnInit(): void {
+    this.recipes = this.recipesService.getMockRecipes();
   }
 
+  saveRecipe(recipeId: number) { }
+
+  likeRecipe(recipeId: number){ }
+
+  viewRecipe(recipeId: number) {
+    this.router.navigateByUrl('/recipe/' + recipeId );
+  }
 }
