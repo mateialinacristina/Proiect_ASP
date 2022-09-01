@@ -8,3 +8,82 @@
 .recipe-detail-card {
     height: 100%;
 }
+
+.recipe-detail-title {
+    text-align: center;
+    font-size: 40px;
+    font-family: cursive;
+}
+
+.recipe-card-content {
+    overflow: auto;
+    height: calc(100% - 65px);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.recipe-container {
+    align-items: center;
+}
+
+.section-title {
+    font-size: 25px;
+    margin: 30px 0 0 0;
+    font-family: cursive;
+}
+
+.row, .ingredient-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+.col, .recipe-container  {
+    display: flex;
+    flex-direction: column;
+}
+
+.divider, .row, .section-title, .ingredients-container, .preparation-details-container {
+    width: 700px;}
+
+    .divider {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .time-label {
+        font-size: 18px;
+    }
+    
+    .time {
+        font-size: 15px;
+        font-style: italic;
+    }
+    
+    .dot-icon {
+        font-size: 8px;
+        height: 10px;
+        margin-left: 40px;
+    }
+    
+    .add-icon {
+        font-size: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    
+    .ingredient-row {
+        align-items: center;
+        justify-content: space-between;
+        width: 400px;
+    }
+    
+    .ingredient, .preparation-details-container {
+        font-size: 16px;
+    }

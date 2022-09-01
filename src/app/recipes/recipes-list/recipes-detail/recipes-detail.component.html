@@ -1,9 +1,49 @@
 <div class="recipe-detail-container">
     <mat-card class="recipe-detail-card ">
-        <mat-card-title>{{recipe.name}}</mat-card-title>
-        <mat-card-content>
-            <div>
-                
+        <mat-card-title class="recipe-detail-title">{{recipe.name}}</mat-card-title>
+        <mat-card-content class="recipe-card-content">
+            <div class="image-container">
+                <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" >
+            </div>
+            <div class="recipe-container">
+                <p class="section-title">Time and Servings</p>
+                <mat-divider class="divider"></mat-divider>
+                <div class="row">
+                    <div class="col">
+                        <span class="time-label">PREP TIME</span>
+                        <span class="time">{{recipe.prepTime}} mins</span>
+                    </div>
+                    <div class="col">
+                        <span class="time-label">COOK TIME</span>
+                        <span class="time">{{recipe.cookTime}} mins</span>
+                    </div>
+                    <div class="col">
+                        <span class="time-label">TOTAL TIME</span>
+                        <span class="time">{{recipe.totalTime}} mins</span>
+                    </div>
+                    <div class="col">
+                        <span class="time-label">SERVINGS</span>
+                        <span class="time">{{recipe.servings}} servings</span>
+                    </div>
+                </div>
+
+                <p class="section-title">Ingredients</p>
+                <mat-divider class="divider"></mat-divider>
+                <div class="col ingredients-container">
+                    <div class="ingredient-row" *ngFor="let ingredient of recipe.ingredients">
+                        <span>
+                            <mat-icon class="dot-icon">lens</mat-icon>
+                            <span class="ingredient"> <span *ngIf="ingredient.amount">{{ingredient.amount}} </span>{{ingredient.unit}} {{ingredient.name}}</span>
+                        </span>
+                        <mat-icon class="add-icon" (click)="addToShoppingList(ingredient)">add</mat-icon>
+                    </div>
+                </div>
+
+                <p class="section-title">How To Prepare</p>
+                <mat-divider class="divider"></mat-divider>
+                <div class="preparation-details-container">
+                    {{recipe.preparationDetails}}
+                </div>
             </div>
         </mat-card-content>
     </mat-card>

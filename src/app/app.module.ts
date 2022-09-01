@@ -21,11 +21,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShoppingListService } from './services/shopping-list.service';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 const MATERIAL_MODULES: any[] = [
   MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule,
-  MatDialogModule
+  MatDialogModule, MatDividerModule
 ];
 
 @NgModule({
@@ -58,7 +60,8 @@ const MATERIAL_MODULES: any[] = [
     MATERIAL_MODULES
   ],
   providers: [
-    RecipesService
+    RecipesService, 
+    ShoppingListService
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
