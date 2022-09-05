@@ -4,14 +4,16 @@ using ASP_project.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ASP_project.Migrations
 {
     [DbContext(typeof(ASP_projectContext))]
-    partial class ASP_projectContextModelSnapshot : ModelSnapshot
+    [Migration("20220905203815_AddedBrandTabel")]
+    partial class AddedBrandTabel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

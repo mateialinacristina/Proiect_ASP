@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP_project.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace ASP_project.Entities
 
         public string IngredientListId { get; set; } //FK
         public IngredientList IngredientList { get; set; }
+
+        public Brand Brand { get; set; }
 
         public ICollection<IngredientShoppingList> IngredientShoppingLists { get; set; }
     }

@@ -25,6 +25,7 @@ namespace ASP_project.Entities
         public DbSet<ShoppingList> ShoppingLists { get; set; }
         public DbSet<IngredientShoppingList> IngredientShoppingLists { get; set; }
        
+        public DbSet<ShoppingList> Brand { get; set; }
   /*   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
@@ -77,6 +78,11 @@ namespace ASP_project.Entities
                 .HasOne(isl => isl.ShoppingList)
                 .WithMany(sl => sl.IngredientShoppingLists)
                 .HasForeignKey(isl => isl.ShoppingListId);
+
+            //ONE TO ONE
+            builder.Entity<Ingredient>()
+                .HasOne(i => i.Brand)
+                .WithOne(b => b.Ingredient);
 
         }
     }

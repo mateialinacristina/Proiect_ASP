@@ -110,6 +110,8 @@ namespace ASP_project
             {
                 opt.AddPolicy("BasicUser", policy => policy.RequireRole("BasicUser").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
                 opt.AddPolicy("Admin", policy => policy.RequireRole("Admin").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
+                opt.AddPolicy("MasterChef", policy => policy.RequireRole("MasterChef").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
+                opt.AddPolicy("Chef", policy => policy.RequireRole("Chef").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
             });
 
             services.AddControllersWithViews()
