@@ -23,6 +23,8 @@ import { MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShoppingListService } from './services/shopping-list.service';
 import { MatDividerModule } from '@angular/material/divider';
+import { MarksPipe } from './marks.pipe';
+import { ArrowPipe } from './arrow.pipe';
 
 
 const MATERIAL_MODULES: any[] = [
@@ -42,7 +44,9 @@ const MATERIAL_MODULES: any[] = [
     LoginComponent,
     MyRecipesComponent,
     EditRecipeComponent,
-    MainComponent
+    MainComponent,
+    MarksPipe,
+    ArrowPipe
   ],
   entryComponents: [
     RecipesDetailComponent

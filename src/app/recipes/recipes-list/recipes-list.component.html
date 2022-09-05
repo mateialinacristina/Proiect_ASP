@@ -14,7 +14,7 @@
                 <p class="recipe-description" [matTooltip]="recipe.description"> {{ recipe.description }} </p>
             </mat-card-content>
             <mat-card-actions class="recipe-card-actions">
-                <button mat-raised-button color="primary" class="details-button" (click)="viewRecipe(recipe.id)">Details</button>
+                <button mat-raised-button color="primary" class="details-button" (click)="viewRecipe(recipe.id)">{{ 'Details' | arrow }}</button>
                 <button mat-icon-button class="save-button" (click)="saveRecipe(recipe.id)" matTooltip="Save Recipe"><mat-icon>turned_in_not</mat-icon></button>
                 <button mat-icon-button class="like-button" (click)="likeRecipe(recipe.id)" matTooltip="Like Recipe"><mat-icon>thumb_up</mat-icon></button>
             </mat-card-actions>
